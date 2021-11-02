@@ -6,9 +6,9 @@ import * as employeeService from "../../services/employeeService";
 
 
 const genderItems = [
-    { id: 'male', title: 'Male' },
-    { id: 'female', title: 'Female' },
-    { id: 'other', title: 'Other' },
+    { id: 'male', title: 'ຊາຍ' },
+    { id: 'female', title: 'ຍິງ' },
+    { id: 'other', title: 'ອື່ນໆ' },
 ]
 
 const initialFValues = {
@@ -29,13 +29,13 @@ export default function EmployeeForm(props) {
     const validate = (fieldValues = values) => {
         let temp = { ...errors }
         if ('fullName' in fieldValues)
-            temp.fullName = fieldValues.fullName ? "" : "This field is required."
+            temp.fullName = fieldValues.fullName ? "" : "ກະລຸນາປ້ອນ."
         if ('email' in fieldValues)
-            temp.email = (/$^|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid."
+            temp.email = (/$^|.+@.+..+/).test(fieldValues.email) ? "" : "ກະລຸນາປ້ອນ."
         if ('mobile' in fieldValues)
-            temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required."
+            temp.mobile = fieldValues.mobile.length > 9 ? "" : "ກະລຸນາປ້ອນ 10 ຕົວເລກ."
         if ('departmentId' in fieldValues)
-            temp.departmentId = fieldValues.departmentId.length != 0 ? "" : "This field is required."
+            temp.departmentId = fieldValues.departmentId.length != 0 ? "" : "ກະລຸນາປ້ອນ."
         setErrors({
             ...temp
         })
@@ -73,28 +73,28 @@ export default function EmployeeForm(props) {
                 <Grid item xs={6}>
                     <Controls.Input
                         name="fullName"
-                        label="Full Name"
+                        label="ຊື່ແລະນາມສະກຸນ"
                         value={values.fullName}
                         onChange={handleInputChange}
                         error={errors.fullName}
                     />
                     <Controls.Input
-                        label="Email"
+                        label="ອີແມວ"
                         name="email"
                         value={values.email}
                         onChange={handleInputChange}
                         error={errors.email}
                     />
                     <Controls.Input
-                        label="Mobile"
-                        name="mobile"
+                        label="ເບີໂທ"
+                        name="ເບີໂທ"
                         value={values.mobile}
                         onChange={handleInputChange}
                         error={errors.mobile}
                     />
                     <Controls.Input
-                        label="City"
-                        name="city"
+                        label="ເມືອງ"
+                        name="mobile"
                         value={values.city}
                         onChange={handleInputChange}
                     />
@@ -103,14 +103,14 @@ export default function EmployeeForm(props) {
                 <Grid item xs={6}>
                     <Controls.RadioGroup
                         name="gender"
-                        label="Gender"
+                        label="ເພດ"
                         value={values.gender}
                         onChange={handleInputChange}
                         items={genderItems}
                     />
                     <Controls.Select
                         name="departmentId"
-                        label="Department"
+                        label="ສາຂາ"
                         value={values.departmentId}
                         onChange={handleInputChange}
                         options={employeeService.getDepartmentCollection()}
@@ -118,13 +118,13 @@ export default function EmployeeForm(props) {
                     />
                     <Controls.DatePicker
                         name="hireDate"
-                        label="Hire Date"
+                        label="ວດປ"
                         value={values.hireDate}
                         onChange={handleInputChange}
                     />
                     <Controls.Checkbox
                         name="isPermanent"
-                        label="Permanent Employee"
+                        label="ເປັນພະນັກງານ"
                         value={values.isPermanent}
                         onChange={handleInputChange}
                     />
@@ -132,9 +132,9 @@ export default function EmployeeForm(props) {
                     <div>
                         <Controls.Button
                             type="submit"
-                            text="Submit" />
+                            text="ບັນທຶກ" />
                         <Controls.Button
-                            text="Reset"
+                            text="ຍົກ"
                             color="default"
                             onClick={resetForm} />
                     </div>

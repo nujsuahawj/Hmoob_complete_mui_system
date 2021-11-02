@@ -96,7 +96,7 @@ export default function Employees() {
         setRecords(employeeService.getAllEmployees())
         setNotify({
             isOpen: true,
-            message: 'Deleted Successfully',
+            message: 'Deleted lawm',
             type: 'error'
         })
     }
@@ -104,15 +104,15 @@ export default function Employees() {
     return (
         <>
             <PageHeader
-                title="New Employee"
-                subTitle="Form design with validation"
+                title="ພະນັກງານໃໝ່"
+                subTitle="ຮັບເຂົ້າໃໝ່"
                 icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
             />
             <Paper className={classes.pageContent}>
 
                 <Toolbar>
                     <Controls.Input
-                        label="Search Employees"
+                        label="ຊອກຫາພະນັກງານ"
                         className={classes.searchInput}
                         InputProps={{
                             startAdornment: (<InputAdornment position="start">
@@ -122,7 +122,7 @@ export default function Employees() {
                         onChange={handleSearch}
                     />
                     <Controls.Button
-                        text="Add New"
+                        text="ເພີ່ມພະນັກງານໃໝ່"
                         variant="outlined"
                         startIcon={<AddIcon />}
                         className={classes.newButton}
@@ -166,7 +166,7 @@ export default function Employees() {
                 <TblPagination />
             </Paper>
             <Popup
-                title="Employee Form"
+                title="ຟອມເພີ່ມພະນັກງານ"
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >

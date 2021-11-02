@@ -4,10 +4,10 @@ const KEYS = {
 }
 
 export const getDepartmentCollection = () => ([
-    { id: '1', title: 'Development' },
-    { id: '2', title: 'Marketing' },
-    { id: '3', title: 'Accounting' },
-    { id: '4', title: 'HR' },
+    { id: '1', title: 'ຄອມ' },
+    { id: '2', title: 'ຊີວະ' },
+    { id: '3', title: 'ຟີຊິກ' },
+    { id: '4', title: 'ເຄມີ' },
 ])
 
 export function insertEmployee(data) {

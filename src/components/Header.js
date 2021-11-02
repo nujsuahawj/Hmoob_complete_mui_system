@@ -35,7 +35,7 @@ export default function Header() {
                     alignItems="center">
                     <Grid item>
                         <InputBase
-                            placeholder="Search topics"
+                            placeholder="ຊອກຫາ"
                             className={classes.searchInput}
                             startAdornment={<SearchIcon fontSize="small" />}
                         />
